@@ -117,5 +117,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.validation_client_name = "ORGNAME-validator"
 
   # Enable provisioning with custom hackish shell script
-  config.vm.provision "shell", path: "poor_mans_provision.sh"
+  config.vm.provision "shell", path: "hackish_shell_provision.sh"
 end
