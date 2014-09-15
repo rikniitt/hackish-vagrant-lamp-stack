@@ -5,7 +5,7 @@
 
 MYSQL_ROOT_PASSWORD="secret"
 
-header=" ### Poor man's provision ### "
+header=" =========== "
 
 
 echo ""
