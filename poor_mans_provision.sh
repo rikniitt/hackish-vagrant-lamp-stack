@@ -54,8 +54,8 @@ sudo sed -i -e 's/var\/www/vagrant\/public_html/g' /etc/apache2/sites-available/
 # Enable and disable virtual hosts
 sudo a2dissite default && sudo a2ensite vagrant-default && sudo service apache2 reload
 # Create some basic index file
-echo "<h1>Hello vagrant</h1>" >> /vagrant/public_html/index.php
-echo "<?php echo '<h2>Hello from php also</h2>'; ?>" >> /vagrant/public_html/index.php
+sudo echo "<h1>Hello vagrant</h1>" >> /vagrant/public_html/index.php
+sudo echo "<?php echo '<h2>Hello from php also</h2>'; ?>" >> /vagrant/public_html/index.php
 
 
 
