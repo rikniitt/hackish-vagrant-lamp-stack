@@ -58,6 +58,46 @@ sudo echo "<h1>Hello vagrant</h1>" >> /vagrant/public_html/index.php
 sudo echo "<?php echo '<h2>Hello from php also</h2>'; ?>" >> /vagrant/public_html/index.php
 
 
+echo ""
+echo "$header Creating home/scripts folder and adding it to PATH..."
+# Create new folder in home dir
+sudo mkdir /home/vagrant/scripts
+# Add it to path
+sudo echo "PATH=\"\$HOME/scripts:\$PATH\"" >> /home/vagrant/.bashrc
+# Create some helper script in it
+sudo touch /home/vagrant/scripts/mysql_console
+sudo cat > /home/vagrant/scripts/mysql_console <<EOL
+#!/usr/bin/env bash
+
+mysql -uroot -p${MYSQL_ROOT_PASSWORD} --show-warnings
+EOL
+sudo chmod +x /home/vagrant/scripts/mysql_console
+
+
+echo ""
+echo "$header Downloading composer, some packages and adding them to PATH..."
+# Create folder for it
+sudo mkdir /home/vagrant/composer
+# Download it
+cd /home/vagrant/composer && curl -sS https://getcomposer.org/installer | php
+# Add composer.json
+sudo touch /home/vagrant/composer/composer.json
+sudo cat > /home/vagrant/composer/composer.json <<EOL
+{
+    "name": "vagrant/composer",
+    "require": {
+        "phpunit/phpunit": "~4.3",
+        "phing/phing": "~2.8",
+        "squizlabs/php_codesniffer": "~1.5"
+    }
+}
+EOL
+# Run composer install
+cd /home/vagrant/composer && php composer.phar install
+# Add them to path
+sudo echo "PATH=\"\$HOME/composer:\$PATH\"" >> /home/vagrant/.bashrc
+sudo echo "PATH=\"\$HOME/composer/vendor/bin:\$PATH\"" >> /home/vagrant/.bashrc
+
 
 echo ""
 echo "$header"
