@@ -3,65 +3,67 @@
 # I use this script to setup my vagrant precise32 dev boxes.
 # Someday I hopefully have some other (more robust) script.
 
+DEBUG=0
+
 function print_header {
   header="=============================================="
-
   echo ""
   echo "$header"
   echo -e "$1"
   echo "$header"
   echo ""
-
 }
 
 
-print_header "Updating (package indexes)...."
-/vagrant/recipes/apt_update.sh
+if [ $DEBUG -eq 0 ]; then
+  function exec_recipe {
+    script="/vagrant/recipes/$1.sh"
+    eval $script > /dev/null
+  }
+else
+  function exec_recipe {
+    script="/vagrant/recipes/$1.sh"
+    eval $script
+  }
+fi
 
+
+
+print_header "Updating (package indexes)...."
+exec_recipe "apt_update"
 
 print_header "Installing some basic packages..."
-/vagrant/recipes/basic_packages.sh
-
+exec_recipe "basic_packages"
 
 print_header "Installing apache..."
-/vagrant/recipes/apache.sh
-
+exec_recipe "apache"
 
 print_header "Installing php5..."
-/vagrant/recipes/php.sh
-
+exec_recipe "php"
 
 print_header "Installing some php5 extensions..."
-/vagrant/recipes/php_extensions.sh
-
+exec_recipe "php_extensions"
 
 print_header "Installing mysql..."
-/vagrant/recipes/mysql.sh
-
+exec_recipe "mysql"
 
 print_header "Setting up apache virtual hosts..."
-/vagrant/recipes/apache_vhost.sh
-
+exec_recipe "apache_vhost"
 
 print_header "Creating home/scripts folder and adding it to PATH..."
-/vagrant/recipes/home_scripts.sh
-
+exec_recipe "home_scripts"
 
 print_header "Download composer..."
-/vagrant/recipes/composer.sh
-
+exec_recipe "composer"
 
 print_header "Install some global composer packages..."
-/vagrant/recipes/composer_packages.sh
-
+exec_recipe "composer_packages"
 
 print_header "Downloading and install nodejs \nfrom source (compiling will take a while)..."
-/vagrant/recipes/nodejs.sh
-
+exec_recipe "nodejs"
 
 print_header "Install some global nodejs packages..."
-/vagrant/recipes/nodejs_packages.sh
-
+exec_recipe "nodejs_packages"
 
 
 print_header "Hopefully done!!!"
