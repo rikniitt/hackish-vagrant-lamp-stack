@@ -15,7 +15,7 @@ sudo apt-get -y update
 
 echo ""
 echo "$header Installing some basic packages..."
-sudo apt-get -y install curl screen git
+sudo apt-get -y install curl screen git tree
 
 
 echo ""
