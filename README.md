@@ -1,7 +1,7 @@
 My vagrant dev box setup
 ========================
 Ubuntu 12.04 (precise32) vagrant box with
-LAMP-stack.
+LAMP-stack (with nodejs).
 
 
 ## Install
@@ -9,7 +9,8 @@ LAMP-stack.
 `vagrant up`
 
 This will install new virtual machine and use *hackish_shell_provision.sh* shell
-script for provisioning. It will install apache, php and mysql.
+script for provisioning. It will install apache, php, mysql and nodejs.
+This will propably take a while (last time checked ~20min).
 
 Mysql servers root password is defined in provision-script. You can change it
 if you feel like it.
