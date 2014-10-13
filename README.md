@@ -8,15 +8,15 @@ LAMP-stack (with nodejs).
 
 `vagrant up`
 
-This will install new virtual machine and use *hackish_shell_provision.sh* shell
+This will install new virtual machine and use *provision.sh* shell
 script for provisioning. It will install apache, php, mysql and nodejs.
 This will propably take a while (last time checked ~20min).
 
-Mysql servers root password is defined in provision-script. You can change it
+Mysql servers root password is defined in recipes/mysql.sh-script. You can change it
 if you feel like it.
 
 Host machines port 8080 will be forwarded to guest machines port 80. This
-is defined in *Vagrantfile* line 22. This can be also changed.
+is defined in *Vagrantfile* line 15. This can be also changed.
 
 Apache document root is folder *public_html* (*/vagrant/public_html* in guest machine).
 When `vagrant up` finishes, you should be able to point your browser to 
