@@ -63,8 +63,11 @@ sed -i -e 's/var\/www/vagrant\/public_html/g' /etc/apache2/sites-available/vagra
 # Enable and disable virtual hosts
 a2dissite default && sudo a2ensite vagrant-default && sudo service apache2 reload
 # Create some basic index file
-echo "<h1>Hello vagrant</h1>" >> /vagrant/public_html/index.php
-echo "<?php echo '<h2>Hello from php also</h2>'; ?>" >> /vagrant/public_html/index.php
+touch /vagrant/public_html/index.php
+cat > /vagrant/public_html/index.php <<EOL
+<h1>Hello vagrant</h1>
+<?php echo '<h2>Hello from php also</h2>'; ?>
+EOL
 
 
 echo ""
@@ -77,7 +80,6 @@ echo "export PATH=\"\$HOME/scripts:\$PATH\"" >> /home/vagrant/.bashrc
 touch /home/vagrant/scripts/mysql_console
 cat > /home/vagrant/scripts/mysql_console <<EOL
 #!/usr/bin/env bash
-
 mysql -uroot -p${MYSQL_ROOT_PASSWORD} --show-warnings
 EOL
 chmod +x /home/vagrant/scripts/mysql_console
