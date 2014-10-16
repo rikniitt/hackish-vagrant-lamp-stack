@@ -5,7 +5,7 @@
 
 # Change this to non-zero if you want to see
 # everything outputted during provisioning.
-DEBUG=0
+DEBUG=1
 
 function print_header {
   header="=============================================="
@@ -44,6 +44,9 @@ exec_recipe "php_extensions"
 
 print_header "Installing mysql..."
 exec_recipe "mysql"
+
+print_header "Installing sqlite..."
+exec_recipe "sqlite"
 
 print_header "Setting up apache virtual hosts..."
 exec_recipe "apache_vhost"
