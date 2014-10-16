@@ -3,6 +3,8 @@
 # I use this script to setup my vagrant precise32 dev boxes.
 # Someday I hopefully have some other (more robust) script.
 
+# Change this to non-zero if you want to see
+# everything outputted during provisioning.
 DEBUG=0
 
 function print_header {
@@ -15,18 +17,14 @@ function print_header {
 }
 
 
-if [ $DEBUG -eq 0 ]; then
-  function exec_recipe {
-    script="/vagrant/recipes/$1.sh"
-    eval $script > /dev/null
-  }
-else
-  function exec_recipe {
-    script="/vagrant/recipes/$1.sh"
-    eval $script
-  }
-fi
-
+function exec_recipe {
+  script="/vagrant/bash_provision/recipes/$1.sh"
+  if [ $DEBUG -eq 0 ]; then
+    /bin/bash "$script" > /dev/null
+  else
+    /bin/bash "$script"
+  fi
+}
 
 
 print_header "Updating (package indexes)...."
