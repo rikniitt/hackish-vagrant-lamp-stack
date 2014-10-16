@@ -45,8 +45,9 @@ exec_recipe "php_extensions"
 print_header "Installing mysql..."
 exec_recipe "mysql"
 
-print_header "Installing sqlite..."
-exec_recipe "sqlite"
+# Uncomment following lines if you wish to install sqlite
+# print_header "Installing sqlite..."
+# exec_recipe "sqlite"
 
 print_header "Setting up apache virtual hosts..."
 exec_recipe "apache_vhost"
@@ -60,11 +61,12 @@ exec_recipe "composer"
 print_header "Install some global composer packages..."
 exec_recipe "composer_packages"
 
-print_header "Downloading and install nodejs \nfrom source (compiling will take a while)..."
-exec_recipe "nodejs"
-
-print_header "Install some global nodejs packages..."
-exec_recipe "nodejs_packages"
+# Uncomment following lines if you wish to install nodejs
+# print_header "Downloading and install nodejs \nfrom source (compiling will take a while)..."
+# exec_recipe "nodejs"
+# 
+# print_header "Install some global nodejs packages..."
+# exec_recipe "nodejs_packages"
 
 
 print_header "Hopefully done!!!"
