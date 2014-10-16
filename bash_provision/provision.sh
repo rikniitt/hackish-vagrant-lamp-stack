@@ -5,7 +5,7 @@
 
 # Change this to non-zero if you want to see
 # everything outputted during provisioning.
-DEBUG=1
+DEBUG=0
 
 function print_header {
   header="=============================================="
