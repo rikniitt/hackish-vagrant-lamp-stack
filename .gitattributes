@@ -1,0 +1,8 @@
+# Trying to deal with line ending problems with bash scripts
+# when cloning this project to windows machine.
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Declare files that will always have LF line endings on checkout.
+*.sh text eol=lf
