@@ -36,10 +36,6 @@ exec_recipe "basic_packages"
 print_header "Installing apache..."
 exec_recipe "apache"
 
-# Uncomment following lines if you wish to install php 5.4 via 3rd party repository
-# print_header "Adding 3rd party repository for php 5.4..."
-# exec_recipe "use_php54"
-
 print_header "Installing php5..."
 exec_recipe "php"
 
