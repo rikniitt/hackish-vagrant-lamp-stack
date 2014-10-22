@@ -18,3 +18,6 @@ tail -f /var/log/apache2/access.log -f /var/log/apache2/error.log
 EOL
 chmod +x /home/vagrant/scripts/tail_apache_logs
 
+
+# Finally change owner to vagrant
+chown -R vagrant:vagrant /home/vagrant/scripts

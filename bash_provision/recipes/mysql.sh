@@ -68,4 +68,5 @@ character-sets-dir       = /usr/share/mysql/charsets
 default-character-set    = utf8
 
 EOL
-
+# Change owner
+chown vagrant:vagrant /home/vagrant/.my.cnf
