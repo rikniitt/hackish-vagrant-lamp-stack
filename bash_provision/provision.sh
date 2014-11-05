@@ -68,5 +68,7 @@ exec_recipe "composer_packages"
 # print_header "Install some global nodejs packages..."
 # exec_recipe "nodejs_packages"
 
+print_header "Setting lang to UTF-8..."
+exec_recipe "locale"
 
 print_header "Hopefully done!!!"
