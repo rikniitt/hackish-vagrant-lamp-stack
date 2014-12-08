@@ -29,7 +29,7 @@ Check *bash_provision/provision.sh* for complete list of what is done during pro
 You can install sqlite or nodejs by uncommenting lines from provision script.
 
 Also you can add packages which are installed via apt in 
-*bash_provision/recipes/basic_pacakges.sh* if something you need is missing.
+*bash_provision/recipes/basic_packages.sh* if something you need is missing.
 
 
 ## Uninstall
@@ -38,7 +38,3 @@ Also you can add packages which are installed via apt in
 
 This will remove traces of virtual machine but will leave modification made to this folder
 (shared folder) in place.
-
-
-
-

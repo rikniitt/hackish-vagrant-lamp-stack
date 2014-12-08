@@ -64,11 +64,11 @@ exec_recipe "composer_packages"
 # Uncomment following lines if you wish to install nodejs
 # print_header "Downloading and install nodejs \nfrom source (compiling will take a while)..."
 # exec_recipe "nodejs"
-# 
+#
 # print_header "Install some global nodejs packages..."
 # exec_recipe "nodejs_packages"
 
-print_header "Setting lang to UTF-8..."
+print_header "Setting locale to UTF-8..."
 exec_recipe "locale"
 
 print_header "Hopefully done!!!"
