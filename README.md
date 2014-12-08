@@ -38,3 +38,4 @@ Also you can add packages which are installed via apt in
 
 This will remove traces of virtual machine but will leave modification made to this folder
 (shared folder) in place.
+
