@@ -27,11 +27,15 @@ function exec_recipe {
 }
 
 
-print_header "Updating (package indexes)...."
+print_header "Updating (package indices)...."
 exec_recipe "apt_update"
 
 print_header "Installing some basic packages..."
 exec_recipe "basic_packages"
+
+# Uncomment following lines if you wish to install php 5.4
+# print_header "Adding third party PPA for php..."
+# exec_recipe "use_php54"
 
 print_header "Installing apache..."
 exec_recipe "apache"
