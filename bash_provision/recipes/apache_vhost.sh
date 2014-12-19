@@ -14,4 +14,3 @@ cat > /vagrant/public_html/index.php <<EOL
 <h1>Hello vagrant</h1>
 <?php echo '<h2>Hello from php also</h2>'; ?>
 EOL
-

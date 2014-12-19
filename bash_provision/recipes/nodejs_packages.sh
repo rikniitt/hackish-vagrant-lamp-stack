@@ -20,4 +20,3 @@ npm install -g generator-bootstrap
 npm install -g generator-angular
 npm install -g generator-backbone
 npm install -g generator-marionette-frontend
-

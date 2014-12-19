@@ -27,4 +27,3 @@ cd /
 rm -rf /home/vagrant/node-latest-install
 # And finally chown nodejs folder
 chown -R vagrant:vagrant /home/vagrant/nodejs
-

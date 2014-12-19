@@ -6,4 +6,3 @@ mkdir /home/vagrant/composer
 cd /home/vagrant/composer && curl -sS https://getcomposer.org/installer | php
 # Add it to path
 echo "export PATH=\"\$HOME/composer:\$PATH\"" >> /home/vagrant/.bashrc
-

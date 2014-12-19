@@ -16,4 +16,3 @@ EOL
 cd /home/vagrant/composer && php composer.phar install
 # Add vendor bin to path
 echo "export PATH=\"\$HOME/composer/vendor/bin:\$PATH\"" >> /home/vagrant/.bashrc
-
