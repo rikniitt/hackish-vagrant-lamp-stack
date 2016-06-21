@@ -75,4 +75,7 @@ exec_recipe "composer_packages"
 print_header "Setting locale to UTF-8..."
 exec_recipe "locale"
 
+print_header "Updating ~/.bashrc..."
+exec_recipe "bashrc"
+
 print_header "Hopefully done!!!"
