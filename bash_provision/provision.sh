@@ -78,4 +78,7 @@ exec_recipe "locale"
 print_header "Updating ~/.bashrc..."
 exec_recipe "bashrc"
 
+print_header "Adding syntax highlighting for nano and less..."
+exec_recipe "syntax_highlight"
+
 print_header "Hopefully done!!!"
