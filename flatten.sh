@@ -17,9 +17,14 @@ inline=''
 while read -r recipe; do
     script=$scripts/$recipe".sh"
     echo "Reading $script"
-    header='### '$recipe$'\n'
-    lines=$( tail -n +2 $script | grep -v -e '^$' )
-    inline="$inline$header$lines"
+    if [ -n "$EXCLUDE_COMMENTS" ]; then
+        header=''
+        lines=$( tail -n +2 $script | grep -v -e '^$' | grep -v '^#' )
+    else
+        header='### '$recipe$'\n'
+        lines=$( tail -n +2 $script | grep -v -e '^$' )
+    fi
+    inline="$inline$header$lines"$'\n'
 done <<< "$recipes"
 
 read -r -d '' vagrant << VAGRANT
